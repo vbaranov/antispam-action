@@ -24,5 +24,7 @@ jobs:
 
     steps:
       - uses: liamg/antispam-action@1
+        with:
+          token: ${{ github.token }}
 ```
 

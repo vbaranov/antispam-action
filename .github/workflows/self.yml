@@ -13,4 +13,6 @@ jobs:
 
     steps:
       - uses: liamg/antispam-action@main
+        with:
+          token: ${{ github.token }}
 

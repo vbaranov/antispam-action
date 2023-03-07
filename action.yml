@@ -4,6 +4,10 @@ author: "Liam Galvin"
 branding:
   icon: 'slash'
   color: 'blue'
+inputs:
+  token:
+    description: "GitHub token"
+    required: true
 runs:
   using: "docker"
   image: "Dockerfile"

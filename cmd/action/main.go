@@ -23,7 +23,7 @@ func main() {
 	}
 
 	ctx := context.Background()
-	client := github.NewTokenClient(ctx, os.Getenv("ACTIONS_RUNTIME_TOKEN"))
+	client := github.NewTokenClient(ctx, os.Getenv("INPUT_TOKEN"))
 	a := antispam.New(ctx, client)
 
 	switch eventType {
