@@ -1,0 +1,9 @@
+name: "Antispam"
+description: "Automatically close spam PRs/issues"
+author: "Liam Galvin"
+branding:
+  icon: 'slash'
+  color: 'blue'
+runs:
+  using: "docker"
+  image: "Dockerfile"

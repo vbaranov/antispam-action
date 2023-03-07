@@ -1,0 +1,16 @@
+name: antispam
+
+on: [issues, pull_request]
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  build:
+    name: Antispam
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: liamg/antispam-action@main
+
