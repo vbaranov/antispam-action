@@ -51,6 +51,14 @@ func (a *Antispam) ProcessIssue(payload []byte) error {
 		}
 	}
 
+	labels := []string{"spam"}
+	if _, _, err := a.client.Issues.Edit(a.ctx, event.GetRepo().GetOwner().GetLogin(), event.GetRepo().GetName(), event.GetIssue().GetNumber(), &github.IssueRequest{
+		State:  github.String("closed"),
+		Labels: &labels,
+	}); err != nil {
+		return err
+	}
+
 	if _, _, err := a.client.Issues.CreateComment(
 		a.ctx,
 		event.GetRepo().GetOwner().GetLogin(),
@@ -58,19 +66,8 @@ func (a *Antispam) ProcessIssue(payload []byte) error {
 		event.GetIssue().GetNumber(),
 		&github.IssueComment{
 			Body: &body,
-			User: &github.User{
-				Login: github.String("antispam[bot]"),
-			},
 		},
 	); err != nil {
-		return err
-	}
-
-	labels := []string{"spam"}
-	if _, _, err := a.client.Issues.Edit(a.ctx, event.GetRepo().GetOwner().GetLogin(), event.GetRepo().GetName(), event.GetIssue().GetNumber(), &github.IssueRequest{
-		State:  github.String("closed"),
-		Labels: &labels,
-	}); err != nil {
 		return err
 	}
 

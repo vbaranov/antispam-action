@@ -43,6 +43,12 @@ func (a *Antispam) ProcessPullRequest(payload []byte) error {
 		}
 	}
 
+	if _, _, err := a.client.PullRequests.Edit(a.ctx, event.GetRepo().GetOwner().GetLogin(), event.GetRepo().GetName(), event.GetPullRequest().GetNumber(), &github.PullRequest{
+		State: github.String("closed"),
+	}); err != nil {
+		return err
+	}
+
 	if _, _, err := a.client.Issues.CreateComment(
 		a.ctx,
 		event.GetRepo().GetOwner().GetLogin(),
@@ -50,17 +56,8 @@ func (a *Antispam) ProcessPullRequest(payload []byte) error {
 		event.GetPullRequest().GetNumber(),
 		&github.IssueComment{
 			Body: &body,
-			User: &github.User{
-				Login: github.String("antispam[bot]"),
-			},
 		},
 	); err != nil {
-		return err
-	}
-
-	if _, _, err := a.client.PullRequests.Edit(a.ctx, event.GetRepo().GetOwner().GetLogin(), event.GetRepo().GetName(), event.GetPullRequest().GetNumber(), &github.PullRequest{
-		State: github.String("closed"),
-	}); err != nil {
 		return err
 	}
 
