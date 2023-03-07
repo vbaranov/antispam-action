@@ -11,7 +11,18 @@ Add the following to `.github/workflows/antispam.yml` in your repository:
 ```
 name: antispam
 
-on: [issues, pull_request]
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - reopened
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
 
 permissions:
   pull-requests: write

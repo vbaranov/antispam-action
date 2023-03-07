@@ -61,5 +61,7 @@ func (a *Antispam) ProcessPullRequest(payload []byte) error {
 		return err
 	}
 
+	// TODO: scan PR changes
+
 	return nil
 }
