@@ -58,6 +58,9 @@ func (a *Antispam) ProcessIssue(payload []byte) error {
 		event.GetIssue().GetNumber(),
 		&github.IssueComment{
 			Body: &body,
+			User: &github.User{
+				Login: github.String("antispam[bot]"),
+			},
 		},
 	); err != nil {
 		return err

@@ -50,6 +50,9 @@ func (a *Antispam) ProcessPullRequest(payload []byte) error {
 		event.GetPullRequest().GetNumber(),
 		&github.IssueComment{
 			Body: &body,
+			User: &github.User{
+				Login: github.String("antispam[bot]"),
+			},
 		},
 	); err != nil {
 		return err
