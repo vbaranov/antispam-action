@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/google/go-github/v50/github"
-	"github.com/liamg/antispam-action/pkg/antispam"
+	"github.com/vbaranov/antispam-action/pkg/antispam"
 )
 
 func main() {
@@ -27,10 +27,6 @@ func main() {
 	a := antispam.New(ctx, client)
 
 	switch eventType {
-	case "pull_request":
-		if err := a.ProcessPullRequest(eventData); err != nil {
-			fail(err)
-		}
 	case "issues":
 		if err := a.ProcessIssue(eventData); err != nil {
 			fail(err)

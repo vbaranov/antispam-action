@@ -6,12 +6,6 @@ on:
       - opened
       - edited
       - reopened
-  pull_request:
-    types:
-      - opened
-      - edited
-      - reopened
-      - synchronize
 
 permissions:
   pull-requests: write
@@ -23,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: liamg/antispam-action@main
+      - uses: vbaranov/antispam-action@main
         with:
           token: ${{ github.token }}
 

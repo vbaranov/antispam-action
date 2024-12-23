@@ -1,8 +1,6 @@
 # antispam-action
 
-GitHub action to automatically close spam issues and pull requests.
-
-Currently I use this to close PRs from Russian bots on [traitor](https://github.com/liamg/traitor).
+GitHub action to automatically close spam issues.
 
 ## Usage
 
@@ -17,12 +15,6 @@ on:
       - opened
       - edited
       - reopened
-  pull_request:
-    types:
-      - opened
-      - edited
-      - reopened
-      - synchronize
 
 permissions:
   pull-requests: write
@@ -34,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: liamg/antispam-action@1
+      - uses: vbaranov/antispam-action@1
         with:
           token: ${{ github.token }}
 ```

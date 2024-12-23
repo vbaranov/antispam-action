@@ -1,6 +1,6 @@
 name: "Antispam Filter"
-description: "Automatically close spam PRs/issues"
-author: "Liam Galvin"
+description: "Automatically close spam issues"
+author: "Liam Galvin, Viktor Baranov"
 branding:
   icon: 'slash'
   color: 'blue'

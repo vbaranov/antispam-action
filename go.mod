@@ -1,4 +1,4 @@
-module github.com/liamg/antispam-action
+module github.com/vbaranov/antispam-action
 
 go 1.19
 

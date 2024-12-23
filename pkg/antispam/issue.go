@@ -19,22 +19,14 @@ func (a *Antispam) ProcessIssue(payload []byte) error {
 	}
 
 	var detections []Detection
-	detections = append(detections, checkText(event.GetIssue().GetTitle())...)
-	detections = append(detections, checkText(event.GetIssue().GetBody())...)
+	detections = append(detections, checkText(event.GetIssue().GetTitle(), "title")...)
+	detections = append(detections, checkText(event.GetIssue().GetBody(), "body")...)
 
-	if len(strings.Split(event.GetIssue().GetTitle(), " ")) <= 1 {
+	if len(strings.Fields(event.GetIssue().GetTitle())) <= 2 {
 		detections = append(detections, Detection{
-			Location:       "issue title",
+			Location:       "title",
 			DebugInfo:      "Title is too short",
 			AuthorFeedback: "Please provide a longer title and reopen the issue.",
-		})
-	}
-
-	if len(event.GetIssue().GetBody()) <= 32 || len(strings.Split(event.GetIssue().GetBody(), " ")) <= 5 {
-		detections = append(detections, Detection{
-			Location:       "issue body",
-			DebugInfo:      "Body is too short or lacks detail",
-			AuthorFeedback: "Please provide a longer description and reopen the issue.",
 		})
 	}
 
@@ -42,7 +34,7 @@ func (a *Antispam) ProcessIssue(payload []byte) error {
 		return nil
 	}
 
-	body := "This issue has been automatically marked as spam and has been closed.\n"
+	body := "This issue has been automatically closed.\n"
 
 	for _, detection := range detections {
 		fmt.Printf("Detected spam in %s: %s\n", detection.Location, detection.DebugInfo)
@@ -51,7 +43,7 @@ func (a *Antispam) ProcessIssue(payload []byte) error {
 		}
 	}
 
-	labels := []string{"spam"}
+	labels := []string{"auto-closed"}
 	if _, _, err := a.client.Issues.Edit(a.ctx, event.GetRepo().GetOwner().GetLogin(), event.GetRepo().GetName(), event.GetIssue().GetNumber(), &github.IssueRequest{
 		State:  github.String("closed"),
 		Labels: &labels,
