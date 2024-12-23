@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: vbaranov/antiscam@1
+      - uses: vbaranov/antiscam-action@main
         with:
           token: ${{ github.token }}
 ```
