@@ -2,7 +2,6 @@ package antispam
 
 import (
 	"encoding/json"
-	"fmt"
 	"strings"
 
 	"github.com/google/go-github/v50/github"
@@ -30,16 +29,17 @@ func (a *Antispam) ProcessIssue(payload []byte) error {
 		})
 	}
 
-	if len(detections) == 0 {
+	reasons := removeDuplicates(detections)
+
+	if len(reasons) == 0 {
 		return nil
 	}
 
 	body := "This issue has been automatically closed.\n"
 
-	for _, detection := range detections {
-		fmt.Printf("Detected spam in %s: %s\n", detection.Location, detection.DebugInfo)
-		if detection.AuthorFeedback != "" {
-			body += "\n- " + detection.AuthorFeedback
+	for _, reason := range reasons {
+		if reason != "" {
+			body += "\n- " + reason
 		}
 	}
 

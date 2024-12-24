@@ -1,6 +1,9 @@
 package antispam
 
-import "strings"
+import (
+	"slices"
+	"strings"
+)
 
 func checkText(str string, location string) []Detection {
 	var detections []Detection
@@ -23,6 +26,7 @@ func checkText(str string, location string) []Detection {
 		strings.Contains(str_lower_case, "withdraw not received") ||
 		strings.Contains(str_lower_case, "failed transfer") ||
 		strings.Contains(str_lower_case, "not yet received") ||
+		strings.Contains(str_lower_case, "not been received") ||
 		strings.Contains(str_lower_case, "didn't received") ||
 		strings.Contains(str_lower_case, "transfer was not successful") ||
 		strings.Contains(str_lower_case, "sent fund") ||
@@ -34,4 +38,13 @@ func checkText(str string, location string) []Detection {
 		})
 	}
 	return detections
+}
+
+func removeDuplicates(sliceList []Detection) []string {
+	var reasons []string
+	for i := range sliceList {
+		reasons = append(reasons, sliceList[i].AuthorFeedback)
+	}
+	slices.Sort(reasons)
+	return slices.Compact(reasons)
 }
