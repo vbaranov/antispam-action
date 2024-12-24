@@ -21,7 +21,7 @@ func (a *Antispam) ProcessIssue(payload []byte) error {
 	detections = append(detections, checkText(event.GetIssue().GetTitle(), "title")...)
 	detections = append(detections, checkText(event.GetIssue().GetBody(), "body")...)
 
-	if len(strings.Fields(event.GetIssue().GetTitle())) <= 2 {
+	if len(strings.Fields(event.GetIssue().GetTitle())) <= 1 {
 		detections = append(detections, Detection{
 			Location:       "title",
 			DebugInfo:      "Title is too short",
