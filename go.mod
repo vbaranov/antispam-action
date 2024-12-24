@@ -1,6 +1,6 @@
 module github.com/vbaranov/antispam-action
 
-go 1.23.4
+go 1.23
 
 require github.com/google/go-github/v50 v50.2.0
 
