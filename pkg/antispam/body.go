@@ -30,7 +30,8 @@ func checkText(str string, location string) []Detection {
 		strings.Contains(str_lower_case, "didn't received") ||
 		strings.Contains(str_lower_case, "transfer was not successful") ||
 		strings.Contains(str_lower_case, "sent fund") ||
-		strings.Contains(str_lower_case, "crypto") {
+		strings.Contains(str_lower_case, "crypto") ||
+		strings.Contains(str_lower_case, "made a deposit") {
 		detections = append(detections, Detection{
 			Location:       location,
 			DebugInfo:      "Body contains info of failed transfer",
