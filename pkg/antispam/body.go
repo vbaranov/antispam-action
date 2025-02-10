@@ -39,7 +39,8 @@ func checkText(str string, location string) []Detection {
 		strings.Contains(str_lower_case, "i don't receive") ||
 		strings.Contains(str_lower_case, "i didn't receive") ||
 		strings.Contains(str_lower_case, "binance") ||
-		strings.Contains(str_lower_case, "coinbase wallet") {
+		strings.Contains(str_lower_case, "coinbase wallet") ||
+		strings.Contains(str_lower_case, "transaction has not arrived") {
 		detections = append(detections, Detection{
 			Location:       location,
 			DebugInfo:      "Body contains info of failed transfer",
