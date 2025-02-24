@@ -13,6 +13,7 @@ func checkText(str string, location string) []Detection {
 		strings.Contains(str_lower_case, "never credited") ||
 		strings.Contains(str_lower_case, "did not recieve payment") ||
 		strings.Contains(str_lower_case, "mistakenly send") ||
+		strings.Contains(str_lower_case, "mistakenly sent") ||
 		strings.Contains(str_lower_case, "transaction mistake") ||
 		strings.Contains(str_lower_case, "by mistake sent") ||
 		strings.Contains(str_lower_case, "wrong network") ||
