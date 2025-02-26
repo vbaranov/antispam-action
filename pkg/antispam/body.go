@@ -41,6 +41,7 @@ func checkText(str string, location string) []Detection {
 		strings.Contains(str_lower_case, "i didn't receive") ||
 		strings.Contains(str_lower_case, "binance") ||
 		strings.Contains(str_lower_case, "coinbase wallet") ||
+		strings.Contains(str_lower_case, "exchange") ||
 		strings.Contains(str_lower_case, "transaction has not arrived") ||
 		strings.Contains(str_lower_case, "cex wallet") ||
 		strings.Contains(str_lower_case, "received my ethereum") ||
