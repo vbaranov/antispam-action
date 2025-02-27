@@ -31,7 +31,11 @@ func checkText(str string, location string) []Detection {
 		strings.Contains(str_lower_case, "didn't received") ||
 		strings.Contains(str_lower_case, "transfer was not successful") ||
 		strings.Contains(str_lower_case, "sent fund") ||
-		strings.Contains(str_lower_case, "crypto") ||
+		strings.Contains(str_lower_case, "crypto transfer") ||
+		strings.Contains(str_lower_case, "crypto deposit") ||
+		strings.Contains(str_lower_case, "send crypto") ||
+		strings.Contains(str_lower_case, "lost crypto") ||
+		strings.Contains(str_lower_case, "crypto lost") ||
 		strings.Contains(str_lower_case, "made a deposit") ||
 		strings.Contains(str_lower_case, "made a transfer") ||
 		strings.Contains(str_lower_case, "i transfer") ||
