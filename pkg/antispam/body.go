@@ -49,6 +49,7 @@ func checkText(str string, location string) []Detection {
 		strings.Contains(str_lower_case, "transaction not receiped") ||
 		strings.Contains(str_lower_case, "wrong deposit") ||
 		strings.Contains(str_lower_case, "wrong transaction") ||
+		strings.Contains(str_lower_case, "transaction still pending") ||
 		strings.Contains(str_lower_case, "refund") {
 		detections = append(detections, Detection{
 			Location:       location,
