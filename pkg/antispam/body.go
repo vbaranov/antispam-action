@@ -8,58 +8,29 @@ import (
 func checkText(str string, location string) []Detection {
 	var detections []Detection
 	str_lower_case := strings.ToLower(str)
-	if strings.Contains(str_lower_case, "my transaction failed") ||
-		strings.Contains(str_lower_case, "not credited") ||
-		strings.Contains(str_lower_case, "never credited") ||
-		strings.Contains(str_lower_case, "did not recieve payment") ||
-		strings.Contains(str_lower_case, "mistakenly send") ||
-		strings.Contains(str_lower_case, "mistakenly sent") ||
-		strings.Contains(str_lower_case, "transaction mistake") ||
-		strings.Contains(str_lower_case, "by mistake sent") ||
-		strings.Contains(str_lower_case, "wrong network") ||
-		strings.Contains(str_lower_case, "wrong wallet address") ||
-		strings.Contains(str_lower_case, "wrong blockchain address") ||
-		strings.Contains(str_lower_case, "wrong send coin") ||
-		strings.Contains(str_lower_case, "assets stuck") ||
-		strings.Contains(str_lower_case, "asset not deposited") ||
-		strings.Contains(str_lower_case, "not receive") ||
-		strings.Contains(str_lower_case, "haven't received") ||
-		strings.Contains(str_lower_case, "withdraw not received") ||
-		strings.Contains(str_lower_case, "failed transfer") ||
-		strings.Contains(str_lower_case, "not yet received") ||
-		strings.Contains(str_lower_case, "not been received") ||
-		strings.Contains(str_lower_case, "didn't received") ||
-		strings.Contains(str_lower_case, "transfer was not successful") ||
-		strings.Contains(str_lower_case, "sent fund") ||
-		strings.Contains(str_lower_case, "crypto transfer") ||
-		strings.Contains(str_lower_case, "crypto deposit") ||
-		strings.Contains(str_lower_case, "send crypto") ||
-		strings.Contains(str_lower_case, "lost crypto") ||
-		strings.Contains(str_lower_case, "crypto lost") ||
-		strings.Contains(str_lower_case, "made a deposit") ||
-		strings.Contains(str_lower_case, "made a transfer") ||
-		strings.Contains(str_lower_case, "i transfer") ||
-		strings.Contains(str_lower_case, "i swap") ||
-		strings.Contains(str_lower_case, "i have transferred") ||
-		strings.Contains(str_lower_case, "i don't receive") ||
-		strings.Contains(str_lower_case, "i didn't receive") ||
-		strings.Contains(str_lower_case, "binance") ||
-		strings.Contains(str_lower_case, "coinbase wallet") ||
-		strings.Contains(str_lower_case, "exchange") ||
-		strings.Contains(str_lower_case, "transaction has not arrived") ||
-		strings.Contains(str_lower_case, "cex wallet") ||
-		strings.Contains(str_lower_case, "received my ethereum") ||
-		strings.Contains(str_lower_case, "transaction not successful") ||
-		strings.Contains(str_lower_case, "transaction not receiped") ||
-		strings.Contains(str_lower_case, "wrong deposit") ||
-		strings.Contains(str_lower_case, "wrong transaction") ||
-		strings.Contains(str_lower_case, "transaction still pending") ||
-		strings.Contains(str_lower_case, "refund") {
-		detections = append(detections, Detection{
-			Location:       location,
-			DebugInfo:      "Body contains info of failed transfer",
-			AuthorFeedback: "Thank you for reporting; please note Blockscout is only an explorer and cannot manage transactions—contact your wallet provider or dApp for assistance.",
-		})
+	patterns := []string{
+		"my transaction failed", "not credited", "never credited", "did not recieve payment",
+		"mistakenly send", "mistakenly sent", "transaction mistake", "by mistake sent",
+		"wrong network", "wrong wallet address", "wrong blockchain address", "wrong send coin",
+		"assets stuck", "asset not deposited", "not receive", "haven't received",
+		"withdraw not received", "failed transfer", "not yet received", "not been received",
+		"didn't received", "transfer was not successful", "sent fund", "crypto transfer",
+		"crypto deposit", "send crypto", "lost crypto", "crypto lost", "made a deposit",
+		"made a transfer", "i transfer", "i swap", "i have transferred", "i don't receive",
+		"i didn't receive", "binance", "coinbase wallet", "exchange", "transaction has not arrived",
+		"cex wallet", "received my ethereum", "transaction not successful", "transaction not receiped",
+		"wrong deposit", "wrong transaction", "transaction still pending", "refund", "faucet sent",
+	}
+
+	for _, pattern := range patterns {
+		if strings.Contains(str_lower_case, pattern) {
+			detections = append(detections, Detection{
+				Location:       location,
+				DebugInfo:      "Body contains info of failed transfer",
+				AuthorFeedback: "Thank you for reporting; please note Blockscout is only an explorer and cannot manage transactions—contact your wallet provider or dApp for assistance.",
+			})
+			break
+		}
 	}
 	return detections
 }
