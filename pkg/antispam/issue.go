@@ -18,8 +18,8 @@ func (a *Antispam) ProcessIssue(payload []byte) error {
 	}
 
 	var detections []Detection
-	detections = append(detections, checkText(event.GetIssue().GetTitle(), "title")...)
-	detections = append(detections, checkText(event.GetIssue().GetBody(), "body")...)
+	detections = append(detections, checkText(event.GetIssue().GetTitle(), "title", *event.GetIssue().User.Login)...)
+	detections = append(detections, checkText(event.GetIssue().GetBody(), "body", *event.GetIssue().User.Login)...)
 
 	if len(strings.Fields(event.GetIssue().GetTitle())) <= 1 {
 		detections = append(detections, Detection{
