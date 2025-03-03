@@ -20,4 +20,6 @@ jobs:
       - uses: vbaranov/antispam-action@main
         with:
           token: ${{ github.token }}
+        env:
+          SCAM_ACTION_WHITELISTED_LOGINS: ${{ vars.SCAM_ACTION_WHITELISTED_LOGINS }}
 
