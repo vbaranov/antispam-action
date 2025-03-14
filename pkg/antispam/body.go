@@ -33,7 +33,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"made a transfer", "i transfer", "i swap", "i have transferred", "i don't receive",
 			"i didn't receive", "binance", "coinbase wallet", "exchange", "transaction has not arrived",
 			"cex wallet", "received my ethereum", "transaction not successful", "transaction not receiped",
-			"wrong deposit", "wrong transaction", "transaction still pending", "refund", "faucet sent",
+			"wrong deposit", "wrong transaction", "transaction still pending", "refund", "faucet sent", "wrongly transfer",
 		}
 
 		for _, pattern := range patterns {
