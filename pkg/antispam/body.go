@@ -34,7 +34,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"i didn't receive", "binance", "coinbase wallet", "exchange", "transaction has not arrived",
 			"cex wallet", "received my ethereum", "transaction not successful", "transaction not receiped",
 			"wrong deposit", "wrong transaction", "transaction still pending", "refund", "faucet sent", "wrongly transfer",
-			"token did not arrive", "get my funds", "not get payment",
+			"token did not arrive", "get my funds", "not get payment", "not receiving money",
 		}
 
 		for _, pattern := range patterns {
