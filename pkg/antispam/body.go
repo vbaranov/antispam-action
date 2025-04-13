@@ -31,7 +31,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"didn't received", "transfer was not successful", "sent fund", "crypto transfer",
 			"crypto deposit", "send crypto", "lost crypto", "crypto lost", "made a deposit",
 			"made a transfer", "i transfer", "i swap", "i have transferred", "i don't receive",
-			"i didn't receive", "binance", "coinbase wallet", "exchange", "transaction has not arrived",
+			"i didn't receive", "binance", "coinbase wallet", "bybit", "transaction has not arrived",
 			"cex wallet", "received my ethereum", "transaction not successful", "transaction not receiped",
 			"wrong deposit", "wrong transaction", "transaction still pending", "refund", "faucet sent", "wrongly transfer",
 			"token did not arrive", "get my funds", "not get payment", "not receiving money", "transaction pending", "unsuccessful transaction", "didn't get the token", "credit not appearing",
