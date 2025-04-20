@@ -35,7 +35,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"cex wallet", "received my ethereum", "transaction not successful", "transaction not receiped",
 			"wrong deposit", "wrong transaction", "transaction still pending", "refund", "faucet sent", "wrongly transfer",
 			"token did not arrive", "get my funds", "not get payment", "not receiving money", "transaction pending", "unsuccessful transaction", "didn't get the token", "credit not appearing",
-			"missing eth",
+			"missing eth", "see tokens in metamask",
 		}
 
 		for _, pattern := range patterns {
