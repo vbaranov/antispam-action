@@ -28,13 +28,14 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"wrong network", "wrong wallet address", "wrong blockchain address", "wrong send coin",
 			"assets stuck", "asset not deposited", "not receive", "haven't received",
 			"withdraw not received", "failed transfer", "not yet received", "not been received",
-			"didn't received", "transfer was not successful", "sent fund", "crypto transfer",
+			"didn't received", "transfer was not successful", "sent fund", "sent a coin", "crypto transfer",
 			"crypto deposit", "send crypto", "lost crypto", "crypto lost", "made a deposit",
 			"made a transfer", "i transfer", "i swap", "i have transferred", "i don't receive",
 			"i didn't receive", "binance", "coinbase wallet", "bybit", "transaction has not arrived",
 			"cex wallet", "received my ethereum", "transaction not successful", "transaction not receiped",
 			"wrong deposit", "wrong transaction", "transaction still pending", "refund", "faucet sent", "wrongly transfer",
 			"token did not arrive", "get my funds", "not get payment", "not receiving money", "transaction pending", "unsuccessful transaction", "didn't get the token", "credit not appearing",
+			"missing eth",
 		}
 
 		for _, pattern := range patterns {
