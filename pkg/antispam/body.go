@@ -26,7 +26,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"my transaction failed", "not credited", "never credited", "did not recieve payment",
 			"mistakenly send", "mistakenly sent", "transaction mistake", "by mistake sent",
 			"wrong network", "wrong wallet address", "wrong blockchain address", "wrong send coin",
-			"assets stuck", "asset not deposited", "not receive", "haven't received",
+			"assets stuck", "not deposited", "not receive", "haven't received",
 			"withdraw not received", "failed transfer", "not yet received", "not been received",
 			"didn't received", "transfer was not successful", "sent fund", "sent a coin", "crypto transfer",
 			"crypto deposit", "send crypto", "lost crypto", "crypto lost", "made a deposit",
