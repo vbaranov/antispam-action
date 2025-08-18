@@ -23,7 +23,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 	if !whitelisted_logins[strings.ToLower(comment_author)] {
 		str_lower_case := strings.ToLower(str)
 		patterns := []string{
-			"my transaction failed", "not credited", "never credited", "did not recieve payment",
+			"transaction failed", "not credited", "never credited", "did not recieve payment",
 			"mistakenly send", "mistakenly sent", "transaction mistake", "by mistake sent",
 			"wrong network", "wrong wallet address", "wrong blockchain address", "wrong send coin",
 			"assets stuck", "not deposited", "not receive", "haven't received",
@@ -36,7 +36,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"wrong deposit", "wrong transaction", "transaction still pending", "refund", "faucet sent", "wrongly transfer",
 			"token did not arrive", "get my funds", "not get payment", "not receiving money", "transaction pending", "unsuccessful transaction", "didn't get the token", "credit not appearing",
 			"missing eth", "see tokens in metamask", "can not swap", "i lose", "i buy", "send to wrong", "sending money", "claim failed", "ineligible to claim", "my money",
-			"made a withdrawal", "receive my withdrawal", "can not claim", "lost payment", "i bought", "hasn't arrived", "mistakenly wrong token", "send by mistake",
+			"made a withdrawal", "receive my withdrawal", "can not claim", "lost payment", "i bought", "hasn't arrived", "mistakenly wrong token", "send by mistake", "wrong address", "withdraw issue",
 		}
 
 		for _, pattern := range patterns {
