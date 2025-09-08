@@ -37,7 +37,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"token did not arrive", "get my funds", "not get payment", "not receiving money", "transaction pending", "unsuccessful transaction", "didn't get the token", "credit not appearing",
 			"missing eth", "see tokens in metamask", "can not swap", "i lose", "i buy", "send to wrong", "sending money", "claim failed", "ineligible to claim", "my money",
 			"made a withdrawal", "receive my withdrawal", "can not claim", "lost payment", "i bought", "hasn't arrived", "mistakenly wrong token", "send by mistake", "wrong address", "withdraw issue",
-			"withdrawal not delivered", "missing transaction", "funds not reflected", "missing coins", "pending withdrawal",
+			"withdrawal not delivered", "missing transaction", "funds not reflected", "missing coins", "pending withdrawal", "missing deposit", "where is my crypto",
 		}
 
 		for _, pattern := range patterns {
