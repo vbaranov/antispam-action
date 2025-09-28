@@ -2,7 +2,10 @@ module github.com/vbaranov/antispam-action
 
 go 1.23
 
-require github.com/google/go-github/v50 v50.2.0
+require (
+	github.com/Conight/go-googletrans v0.2.4
+	github.com/google/go-github/v50 v50.2.0
+)
 
 require (
 	github.com/ProtonMail/go-crypto v0.0.0-20230217124315-7d5c6f04bbb8 // indirect
