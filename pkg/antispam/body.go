@@ -79,6 +79,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 		patterns := []string{
 			// Funds not received / transaction issues (expanded)
 			"transaction failed", "transaction not successful", "unsuccessful transaction", "failed transfer", "transfer failed", "transfer was not successful",
+			"transfer taking very long time", "transfer taking too long", "transfer taking a long time",
 			"reverted", "execution reverted", "tx reverted", "contract execution failed", "status failed",
 			"not credited", "never credited", "credit not appearing", "deposit confirmed but not credited", "confirmed on chain not credited",
 			"did not recieve payment", "did not receive payment", "payment not received", "not get payment", "not receiving money",
