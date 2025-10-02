@@ -6,7 +6,7 @@ import (
 	"slices"
 	"strings"
 	"time"
-	
+
 	translator "github.com/Conight/go-googletrans"
 )
 
@@ -16,7 +16,7 @@ var whitelisted_logins = map[string]bool{}
 func translateToEnglish(text string) string {
 	// Skip translation if text is already mostly English (contains common English words)
 	englishWords := []string{"transaction", "failed", "not", "received", "crypto", "wallet", "funds", "deposit", "withdraw", "pending", "successful", "error", "problem", "help", "please", "thank", "you", "the", "and", "or", "but", "is", "are", "was", "were", "have", "has", "had", "will", "can", "could", "should", "would", "may", "might", "must", "need", "want", "get", "send", "receive", "make", "do", "go", "come", "see", "know", "think", "say", "tell", "ask", "give", "take", "put", "find", "look", "work", "use", "try", "call", "move", "turn", "start", "stop", "open", "close", "buy", "sell", "pay", "cost", "price", "money", "time", "day", "week", "month", "year", "today", "yesterday", "tomorrow", "now", "here", "there", "where", "when", "how", "why", "what", "who", "which", "this", "that", "these", "those", "my", "your", "his", "her", "its", "our", "their", "me", "you", "him", "us", "them", "i", "we", "they", "he", "she", "it"}
-	
+
 	textLower := strings.ToLower(text)
 	englishWordCount := 0
 	for _, word := range englishWords {
@@ -24,12 +24,12 @@ func translateToEnglish(text string) string {
 			englishWordCount++
 		}
 	}
-	
+
 	// If we find 3+ English words, assume it's already in English
 	if englishWordCount >= 3 {
 		return text
 	}
-	
+
 	// Attempt translation using Google Translate web API
 	done := make(chan string, 1)
 	go func() {
@@ -41,7 +41,7 @@ func translateToEnglish(text string) string {
 			done <- translated
 		}
 	}()
-	
+
 	select {
 	case result := <-done:
 		return result
@@ -95,7 +95,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"missing coins", "missing deposit", "missing eth",
 			"made a deposit", "made a transfer", "i transfer", "i have transferred", "sent fund", "sent a coin", "crypto transfer", "crypto deposit", "send crypto",
 			"wrong network", "wrong chain", "wrong chain id", "wrong wallet address", "wrong blockchain address", "wrong address", "wrong deposit", "wrong transaction", "wrong send coin", "send to wrong", "send by mistake", "by mistake sent", "mistakenly send", "mistakenly sent", "transaction mistake", "wrongly transfer",
-			"withdraw not received", "withdraw issue", "withdrawal not delivered", "pending withdrawal", "made a withdrawal", "receive my withdrawal",
+			"withdraw not received", "withdraw issue", "withdrawal not delivered", "pending withdrawal", "made a withdrawal", "receive my withdrawal", "withdraw money",
 			"bridge failed", "bridge not received", "bridge stuck", "bridge pending", "bridge success but not received",
 			"can not swap", "can't swap", "cannot swap", "swap failed", "swap pending", "swap not received", "i swap",
 			"claim failed", "can not claim", "can't claim", "ineligible to claim", "want to claim",
@@ -112,11 +112,11 @@ func checkText(str string, location string, comment_author string) []Detection {
 
 		for _, pattern := range patterns {
 			if strings.Contains(str_lower_case, pattern) {
-					detections = append(detections, Detection{
-						Location:       location,
-						DebugInfo:      "Body indicates funds not received / transaction issue",
-						AuthorFeedback: "Thank you for reporting; please note Blockscout is only an explorer and cannot manage transactions—contact your wallet provider or dApp for assistance.",
-					})
+				detections = append(detections, Detection{
+					Location:       location,
+					DebugInfo:      "Body indicates funds not received / transaction issue",
+					AuthorFeedback: "Thank you for reporting; please note Blockscout is only an explorer and cannot manage transactions—contact your wallet provider or dApp for assistance.",
+				})
 				break
 			}
 		}
