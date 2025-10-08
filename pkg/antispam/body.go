@@ -108,7 +108,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"metamask", "trust wallet", "phantom", "trezor", "ledger", "ledger live", "cex wallet",
 			"faucet sent", "refund", "no successful transaction", "transaction not receiped", "lost crypto", "crypto lost",
 			"not deposited", "get my funds", "i lose", "i buy", "sending money", "my money", "lost payment", "i bought", "mistakenly wrong token",
-			": <issue title>",
+			": <issue title>", "not recive the token",
 		}
 
 		for _, pattern := range patterns {
