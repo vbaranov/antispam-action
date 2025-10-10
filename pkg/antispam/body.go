@@ -75,6 +75,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 	if !whitelisted_logins[strings.ToLower(comment_author)] {
 		// Translate to English first, then convert to lowercase for pattern matching
 		translatedText := translateToEnglish(str)
+		fmt.Printf("Translated text: %s\n", translatedText)
 		str_lower_case := strings.ToLower(translatedText)
 		patterns := []string{
 			// Funds not received / transaction issues (expanded)
