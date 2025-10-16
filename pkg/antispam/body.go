@@ -86,7 +86,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"not credited", "never credited", "credit not appearing", "deposit confirmed but not credited", "confirmed on chain not credited",
 			"did not recieve payment", "did not receive payment", "payment not received", "not get payment", "not receiving money",
 			"not receive", "haven't received", "has not arrived", "has not yet arrived", "hasn't arrived", "not yet received", "not been received", "i don't receive", "i didn't receive", "recipient didn't receive", "didn't received",
-			"token did not arrive", "didn't get the token", "token not received",
+			"did not arrive", "didn't get the token", "token not received",
 			"missing transaction", "transaction pending", "transaction still pending", "stuck on pending", "pending for hours", "pending for days",
 			"0 confirmations", "zero confirmations", "confirmations not increasing", "unconfirmed transaction",
 			"transaction dropped", "tx dropped", "dropped and replaced", "replace-by-fee",
