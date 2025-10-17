@@ -105,7 +105,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"tx not found", "transaction not found", "hash not found", "cannot find transaction", "can't find transaction",
 			"internal tx not shown", "transfer event missing", "logs not found",
 			"wrong memo", "missing memo", "missing tag",
-			"binance", "gcash", "kucoin", "bitget", "coinbase wallet", "bybit", "okx", "kraken", "huobi", "gate.io", "mexc", "crypto.com",
+			"binance", "gcash", "kucoin", "coinex", "bitget", "coinbase wallet", "bybit", "okx", "kraken", "huobi", "gate.io", "mexc", "crypto.com",
 			"metamask", "trust wallet", "phantom", "trezor", "ledger", "ledger live", "cex wallet",
 			"faucet sent", "refund", "no successful transaction", "transaction not receiped", "lost crypto", "crypto lost",
 			"not deposited", "get my funds", "i lose", "i buy", "sending money", "my money", "sent money", "money sent", "lost payment", "i bought",
