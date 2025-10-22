@@ -101,7 +101,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"can not swap", "can't swap", "cannot swap", "swap failed", "swap pending", "swap not received", "i swap",
 			"claim failed", "can not claim", "can't claim", "ineligible to claim", "want to claim",
 			"see tokens in metamask", "token not visible", "can't see tokens", "cannot see tokens", "received my ethereum",
-			"where is my crypto", "where are my funds",
+			"where is my crypto", "where are my funds", "rejection of funds",
 			"tx not found", "transaction not found", "hash not found", "cannot find transaction", "can't find transaction",
 			"internal tx not shown", "transfer event missing", "logs not found",
 			"wrong memo", "missing memo", "missing tag",
