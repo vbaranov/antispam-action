@@ -110,7 +110,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"faucet sent", "refund", "no successful transaction", "transaction not receiped", "lost crypto", "crypto lost",
 			"not deposited", "get my funds", "i lose", "i buy", "sending money", "my money", "sent money", "money sent", "lost payment", "i bought",
 			"mistakenly wrong token", ": <issue title>", "not recive the token", "trader has been pending", "i made a mistake",
-			"recover the fund", "fund is not in my",
+			"recover the fund", "fund is not in my", "cancel the transaction",
 		}
 
 		for _, pattern := range patterns {
