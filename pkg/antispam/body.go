@@ -98,7 +98,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"wrong network", "wrong chain", "wrong chain id", "wrong wallet address", "wrong blockchain address", "wrong address", "wrong deposit", "wrong transaction", "wrong send coin", "send to wrong", "send by mistake", "by mistake sent", "mistakenly send", "mistakenly sent", "transaction mistake", "wrongly transfer",
 			"withdraw not received", "withdraw issue", "withdrawal not delivered", "pending withdrawal", "made a withdrawal", "receive my withdrawal", "received my withdrawal", "withdraw money",
 			"bridge failed", "bridge not received", "bridge stuck", "bridge pending", "bridge success but not received",
-			"can not swap", "can't swap", "cannot swap", "swap failed", "swap pending", "swap not received", "i swap",
+			"can not swap", "can't swap", "cannot swap", "swap failed", "swap pending", "swap not received", "i swap", "unable to swap",
 			"claim failed", "can not claim", "can't claim", "ineligible to claim", "want to claim",
 			"see tokens in metamask", "token not visible", "can't see tokens", "cannot see tokens", "received my ethereum",
 			"where is my crypto", "where are my funds", "rejection of funds", "was debited from my wallet",
