@@ -93,7 +93,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"nonce too low", "replacement transaction underpriced", "underpriced",
 			"insufficient gas", "out of gas", "intrinsic gas too low", "gas too low", "max fee too low", "max priority fee too low",
 			"assets stuck", "funds not reflected", "balance not updating", "balance zero", "wallet shows zero",
-			"missing coins", "missing deposit", "missing eth",
+			"missing coins", "missing deposit", "missing eth", "deposit has not been made",
 			"made a deposit", "made a transfer", "i transfer", "i have transferred", "sent fund", "sent a coin", "crypto transfer", "crypto deposit", "send crypto",
 			"wrong network", "wrong chain", "wrong chain id", "wrong wallet address", "wrong blockchain address", "wrong address", "wrong deposit", "wrong transaction", "wrong send coin", "send to wrong", "send by mistake", "by mistake sent", "mistakenly send", "mistakenly sent", "transaction mistake", "wrongly transfer",
 			"withdraw not received", "withdraw issue", "withdrawal not delivered", "pending withdrawal", "made a withdrawal", "receive my withdrawal", "received my withdrawal", "withdraw money",
