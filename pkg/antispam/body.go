@@ -96,7 +96,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"missing coins", "missing deposit", "missing eth", "deposit has not been made",
 			"made a deposit", "made a transfer", "i transfer", "i have transferred", "sent fund", "sent a coin", "crypto transfer", "crypto deposit", "send crypto",
 			"wrong network", "wrong chain", "wrong chain id", "wrong wallet address", "wrong blockchain address", "wrong address", "wrong deposit", "wrong transaction", "wrong send coin", "send to wrong", "send by mistake", "by mistake sent", "mistakenly send", "mistakenly sent", "transaction mistake", "wrongly transfer",
-			"withdraw not received", "never received", "withdraw issue", "withdrawal not delivered", "pending withdrawal", "made a withdrawal", "receive my withdrawal", "received my withdrawal", "withdraw money", "withdraw problem", "withdrawal expired",
+			"withdraw not received", "never received", "withdraw issue", "withdrawal not delivered", "pending withdrawal", "made a withdrawal", "receive my withdrawal", "received my withdrawal", "withdraw money", "withdraw problem", "withdrawal expired", "withdrawal money",
 			"bridge failed", "bridge not received", "bridge stuck", "bridge pending", "bridge success but not received",
 			"can not swap", "can't swap", "cannot swap", "swap failed", "swap pending", "swap not received", "i swap", "unable to swap",
 			"claim failed", "can not claim", "can't claim", "ineligible to claim", "want to claim",
