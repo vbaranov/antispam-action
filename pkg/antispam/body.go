@@ -108,7 +108,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"binance", "gcash", "kucoin", "coinex", "bitget", "coinbase wallet", "bybit", "okx", "kraken", "huobi", "gate.io", "mexc", "crypto.com",
 			"metamask", "trust wallet", "phantom", "trezor", "ledger", "ledger live", "cex wallet",
 			"faucet sent", "refund", "no successful transaction", "transaction not receiped", "lost crypto", "crypto lost",
-			"not deposited", "get my funds", "i lose", "i buy", "sending money", "my money", "sent money", "money sent", "lost payment", "i bought",
+			"not deposited", "get my funds", "receive my funds", "i lose", "i buy", "sending money", "my money", "sent money", "money sent", "lost payment", "i bought",
 			"mistakenly wrong token", ": <issue title>", "not recive the token", "trader has been pending", "i made a mistake", "debited twice",
 			"recover the fund", "fund is not in my", "cancel the transaction", "i withrawed", "withdrawal failed", "cancel transaction",
 			"successful transaction but not delivered", "pending transaction", "send to etherum", "send plume", "got lost", "wrong supported wallet",
