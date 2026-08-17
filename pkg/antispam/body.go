@@ -113,7 +113,7 @@ func checkText(str string, location string, comment_author string) []Detection {
 			"recover the fund", "fund is not in my", "cancel the transaction", "i withrawed", "withdrawal failed", "cancel transaction",
 			"successful transaction but not delivered", "pending transaction", "send to etherum", "send plume", "got lost", "wrong supported wallet",
 			"to pay me", "gold coin", "purchase", "coins are in transit", "coin is in transit", "hasn't appear in wallet", "unknown withdraw", "trading",
-			"stole my tokens",
+			"stole my tokens", "money never came",
 		}
 
 		for _, pattern := range patterns {
